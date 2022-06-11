@@ -52,6 +52,22 @@ class _HelloWorldsState extends State<HelloWorlds> {
                   'Hi',
                   style: TextStyle(fontSize: 40),
                 ),
+              ),
+              Container(
+                width: 200,
+                height: 100,
+                padding: const EdgeInsets.all(10),
+                margin: const EdgeInsets.only(
+                  top: 40,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.red.shade600,
+                  shape: BoxShape.circle,
+                ),
+                child: const Text(
+                  'Hi',
+                  style: TextStyle(fontSize: 40),
+                ),
               )
             ],
           ),
