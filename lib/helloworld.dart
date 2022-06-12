@@ -63,6 +63,13 @@ class _HelloWorldsState extends State<HelloWorlds> {
                 decoration: BoxDecoration(
                   color: Colors.red.shade600,
                   shape: BoxShape.circle,
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Colors.black,
+                      offset: Offset(3, 6),
+                      blurRadius: 10,
+                    )
+                  ],
                 ),
                 child: const Text(
                   'Hi',
