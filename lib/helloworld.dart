@@ -63,17 +63,72 @@ class _HelloWorldsState extends State<HelloWorlds> {
                 decoration: BoxDecoration(
                   color: Colors.red.shade600,
                   shape: BoxShape.circle,
-                  boxShadow: const [
+                  boxShadow: [
                     BoxShadow(
-                      color: Colors.black,
-                      offset: Offset(3, 6),
+                      color: Colors.black.withOpacity(0.5),
+                      offset: const Offset(3, 6),
                       blurRadius: 10,
                     )
                   ],
                 ),
-                child: const Text(
-                  'Hi',
-                  style: TextStyle(fontSize: 40),
+                child: const Center(
+                  child: Text(
+                    'Hi',
+                    style: TextStyle(
+                      fontSize: 40,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                margin: const EdgeInsets.symmetric(vertical: 20),
+                decoration: BoxDecoration(
+                  color: Colors.red.shade600,
+                  border: Border.all(width: 3, color: Colors.orange),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                // Centering dengan menggunakan
+                // Alignment https://stackoverflow.com/questions/50554110/how-do-i-center-text-vertically-and-horizontally-in-flutter
+                child: const Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    'Hei',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+              Container(
+                width: 300,
+                height: 300,
+                margin: const EdgeInsets.only(
+                  top: 10,
+                  bottom: 40,
+                ),
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 3,
+                    color: Colors.green.shade400,
+                  ),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Center(
+                  child: Text(
+                    'Text berada di tengah\nLorem ipsum dolor sit amet, consectetur adipiscing elit',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 24,
+                        color: Colors.red.shade700),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               )
             ],
