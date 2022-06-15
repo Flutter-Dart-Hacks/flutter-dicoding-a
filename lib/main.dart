@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dicodinga/wisata_bdg_detail_page.dart';
+import 'package:flutter_dicodinga/buttoninput/button_input.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const DetailWisataBandung(),
+      home: const ButtonInputPage(),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
