@@ -130,13 +130,25 @@ class _EditingTextCtrlState extends State<EditingTextCtrl> {
   TextEditingController editingControllers = TextEditingController(text: '');
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    editingControllers.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 16),
       child: Column(
-        children: const [
+        children: [
           TextField(
-            decoration: InputDecoration(
+            controller: editingControllers,
+            decoration: const InputDecoration(
               labelText: 'Sampel Input 2',
               hintText: 'Password',
             ),
