@@ -54,6 +54,14 @@ class TextfieldInputs extends StatelessWidget {
                     height: 20,
                   ),
                   ImageSampel(),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text('Sampel Image aset'),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  ImageAsetSampel(),
                 ],
               ),
             ),
@@ -384,7 +392,6 @@ class _CheckboxSampelsState extends State<CheckboxSampels> {
                 if (isOkValue != null) {
                   setState(() {
                     isOkSetuju = isOkValue;
-                    print(isOkSetuju);
                   });
                 }
               },
@@ -409,6 +416,26 @@ class ImageSampel extends StatelessWidget {
           'https://picsum.photos/200/300',
           width: 200,
           height: 200,
+          fit: BoxFit.contain,
+        ),
+      ),
+    );
+  }
+}
+
+class ImageAsetSampel extends StatelessWidget {
+  const ImageAsetSampel({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(top: 20),
+      child: Center(
+        child: Image.asset(
+          'resources/images/picsum1.jpg',
+          width: 200,
+          height: 200,
+          fit: BoxFit.contain,
         ),
       ),
     );

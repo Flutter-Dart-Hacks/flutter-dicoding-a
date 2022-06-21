@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dicodinga/buttoninput/textfield_input.dart';
+import 'package:flutter_dicodinga/font_sampel.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,8 +25,9 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
+        fontFamily: 'Ubuntu',
       ),
-      home: const TextfieldInputs(),
+      home: const SampelFontPage(),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }

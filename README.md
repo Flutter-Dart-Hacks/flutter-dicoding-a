@@ -1,6 +1,9 @@
-# flutter_dicodinga
+# Flutter Dicoding A
 
-A new Flutter project.
+Latihan mengerjakan kelas dari Dicoding tentang Flutter untuk Pemula.
+
+Codelab Dicoding bisa diakses disini.
+[https://github.com/dicodingacademy/a159-flutter-pemula-labs](https://github.com/dicodingacademy/a159-flutter-pemula-labs)
 
 ## Getting Started
 
