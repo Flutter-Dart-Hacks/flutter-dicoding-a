@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dicodinga/font_sampel.dart';
+import 'package:flutter_dicodinga/wisata_bdg_detail_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,9 +25,9 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
-        fontFamily: 'Ubuntu',
+        fontFamily: 'Oxygen',
       ),
-      home: const SampelFontPage(),
+      home: const DetailWisataBandung(),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
