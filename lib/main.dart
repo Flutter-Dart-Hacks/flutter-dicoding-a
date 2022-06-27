@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dicodinga/wisata_bdg_detail_page.dart';
+import 'package:flutter_dicodinga/lists/list_data.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         fontFamily: 'Oxygen',
       ),
-      home: const DetailWisataBandung(),
+      home: const ListDataSampel(),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
