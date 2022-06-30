@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dicodinga/lists/expand_flexible.dart';
-import 'package:flutter_dicodinga/navigations/screen_pertama.dart';
+import 'package:flutter_dicodinga/responsivelayout/resp_mediaquery.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +28,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Oxygen',
       ),
       // home: const ExpandFlexibleSampel(),
-      home: const ScreenPertama(),
+      home: const MediaQuerySampel(),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
