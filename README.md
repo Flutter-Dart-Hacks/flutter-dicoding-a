@@ -5,6 +5,9 @@ Latihan mengerjakan kelas dari Dicoding tentang Flutter untuk Pemula.
 Codelab Dicoding bisa diakses disini.
 [https://github.com/dicodingacademy/a159-flutter-pemula-labs](https://github.com/dicodingacademy/a159-flutter-pemula-labs)
 
+Menambahkan platform web
+[https://stackoverflow.com/questions/66214066/how-do-i-add-platforms-to-an-existing-flutter-app-project](https://stackoverflow.com/questions/66214066/how-do-i-add-platforms-to-an-existing-flutter-app-project)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
