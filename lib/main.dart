@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dicodinga/responsivelayout/resp_mediaquery.dart';
+import 'package:flutter_dicodinga/wisata_bdg_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Wisata Bandung',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Oxygen',
       ),
       // home: const ExpandFlexibleSampel(),
-      home: const MediaQuerySampel(),
+      home: const WisataBandungPage(),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
