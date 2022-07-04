@@ -47,7 +47,9 @@ class ListWisata extends StatelessWidget {
         return InkWell(
           onTap: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return const DetailWisataBandung();
+              return DetailWisataBandung(
+                tourismPlace: tourismPlace,
+              );
             }));
           },
           child: Card(
@@ -56,9 +58,12 @@ class ListWisata extends StatelessWidget {
               children: [
                 Expanded(
                   flex: 1,
-                  child: Image.asset(
-                    'resources/images/farm-house.jpg',
-                    fit: BoxFit.cover,
+                  child: Hero(
+                    tag: 'wisata_detail_${tourismPlace.imageUrls}',
+                    child: Image.asset(
+                      tourismPlace.imageAsset,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 Expanded(
@@ -68,16 +73,16 @@ class ListWisata extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
-                      children: const [
+                      children: [
                         Text(
-                          'Farm House Lembang',
-                          style: TextStyle(
+                          tourismPlace.name,
+                          style: const TextStyle(
                               fontSize: 16.0, fontWeight: FontWeight.w700),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Text(
-                          'Lembang',
-                          style: TextStyle(fontSize: 14),
+                          tourismPlace.location,
+                          style: const TextStyle(fontSize: 14),
                         ),
                       ],
                     ),

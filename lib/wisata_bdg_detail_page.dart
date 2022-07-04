@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dicodinga/models/touris_item.dart';
+
+var infoTextStyle = const TextStyle(
+  fontWeight: FontWeight.w600,
+  fontSize: 14,
+);
 
 class DetailWisataBandung extends StatefulWidget {
-  const DetailWisataBandung({Key? key}) : super(key: key);
+  const DetailWisataBandung({Key? key, required this.tourismPlace})
+      : super(key: key);
+
+  final TourismPlace tourismPlace;
 
   @override
   State<DetailWisataBandung> createState() => _DetailWisataBandungState();
@@ -20,8 +29,10 @@ class _DetailWisataBandungState extends State<DetailWisataBandung> {
           )
         ],
         leading: IconButton(
-          icon: const Icon(Icons.menu, color: Colors.white),
-          onPressed: () {},
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
       ),
       body: SafeArea(
@@ -31,9 +42,33 @@ class _DetailWisataBandungState extends State<DetailWisataBandung> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                Image.asset(
-                  'resources/images/farm-house.jpg',
-                  fit: BoxFit.cover,
+                Stack(
+                  children: [
+                    Hero(
+                      tag: 'wisata_detail_${widget.tourismPlace.imageUrls}',
+                      child: Image.asset(
+                        widget.tourismPlace.imageAsset,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: Colors.white,
+                            child: IconButton(
+                                icon: const Icon(Icons.arrow_back),
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                }),
+                          ),
+                          const FavoriteButtons()
+                        ],
+                      ),
+                    )
+                  ],
                 ),
                 Container(
                   margin: const EdgeInsets.only(
@@ -41,10 +76,10 @@ class _DetailWisataBandungState extends State<DetailWisataBandung> {
                     left: 14,
                     right: 14,
                   ),
-                  child: const Text(
-                    'Dago Farm House Lembang',
+                  child: Text(
+                    widget.tourismPlace.name,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.w500,
                         fontFamily: 'Staatliches'),
@@ -61,45 +96,36 @@ class _DetailWisataBandungState extends State<DetailWisataBandung> {
                     children: <Widget>[
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const <Widget>[
-                          Icon(Icons.calendar_today),
-                          SizedBox(
+                        children: <Widget>[
+                          const Icon(Icons.calendar_today),
+                          const SizedBox(
                             height: 8,
                           ),
                           Text(
-                            'Buka Tiap Hari',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 14,
-                            ),
+                            widget.tourismPlace.openDays,
+                            style: infoTextStyle,
                           ),
                         ],
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const <Widget>[
-                          Icon(Icons.access_time),
-                          SizedBox(height: 8),
+                        children: <Widget>[
+                          const Icon(Icons.access_time),
+                          const SizedBox(height: 8),
                           Text(
-                            '09:00 - 20:00',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 14,
-                            ),
+                            widget.tourismPlace.openTime,
+                            style: infoTextStyle,
                           ),
                         ],
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const <Widget>[
-                          Icon(Icons.monetization_on),
-                          SizedBox(height: 8),
+                        children: <Widget>[
+                          const Icon(Icons.monetization_on),
+                          const SizedBox(height: 8),
                           Text(
-                            'Rp 21.000',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 14,
-                            ),
+                            widget.tourismPlace.ticketPrice,
+                            style: infoTextStyle,
                           )
                         ],
                       )
@@ -110,7 +136,7 @@ class _DetailWisataBandungState extends State<DetailWisataBandung> {
                   padding: const EdgeInsets.only(
                       top: 14, left: 15, right: 15, bottom: 16),
                   child: Text(
-                    'Berada di jalur utama Bandung-Lembang, Farm House menjadi objek wisata yang tidak pernah sepi pengunjung. Selain karena letaknya strategis, kawasan ini juga menghadirkan nuansa wisata khas Eropa. Semua itu diterapkan dalam bentuk spot swafoto Instagramable.',
+                    widget.tourismPlace.description,
                     style: TextStyle(
                       fontSize: 15.5,
                       fontWeight: FontWeight.w400,
@@ -125,38 +151,50 @@ class _DetailWisataBandungState extends State<DetailWisataBandung> {
                   child: ListView(
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
-                    children: [
-                      Padding(
+                    children: widget.tourismPlace.imageUrls.map((url) {
+                      return Padding(
                         padding: const EdgeInsets.all(4.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: Image.network(
-                            'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg',
+                            url,
                             fit: BoxFit.cover,
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Image.network(
-                            'https://media-cdn.tripadvisor.com/media/photo-w/13/f0/22/f6/photo3jpg.jpg',
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Image.network(
-                            'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg',
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ],
+                      );
+                    }).toList(),
+                    // children: [
+                    //   Padding(
+                    //     padding: const EdgeInsets.all(4.0),
+                    //     child: ClipRRect(
+                    //       borderRadius: BorderRadius.circular(10),
+                    //       child: Image.network(
+                    //         'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg',
+                    //         fit: BoxFit.cover,
+                    //       ),
+                    //     ),
+                    //   ),
+                    //   Padding(
+                    //     padding: const EdgeInsets.all(4.0),
+                    //     child: ClipRRect(
+                    //       borderRadius: BorderRadius.circular(10),
+                    //       child: Image.network(
+                    //         'https://media-cdn.tripadvisor.com/media/photo-w/13/f0/22/f6/photo3jpg.jpg',
+                    //         fit: BoxFit.cover,
+                    //       ),
+                    //     ),
+                    //   ),
+                    //   Padding(
+                    //     padding: const EdgeInsets.all(4.0),
+                    //     child: ClipRRect(
+                    //       borderRadius: BorderRadius.circular(10),
+                    //       child: Image.network(
+                    //         'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg',
+                    //         fit: BoxFit.cover,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ],
                   ),
                 ),
                 const SizedBox(
@@ -165,6 +203,35 @@ class _DetailWisataBandungState extends State<DetailWisataBandung> {
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class FavoriteButtons extends StatefulWidget {
+  const FavoriteButtons({Key? key}) : super(key: key);
+
+  @override
+  State<FavoriteButtons> createState() => _FavoriteButtonsState();
+}
+
+class _FavoriteButtonsState extends State<FavoriteButtons> {
+  bool isFavoritePlace = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return CircleAvatar(
+      backgroundColor: Colors.white,
+      child: IconButton(
+        onPressed: () {
+          setState(() {
+            isFavoritePlace = !isFavoritePlace;
+          });
+        },
+        icon: Icon(
+          isFavoritePlace ? Icons.favorite : Icons.favorite_border,
+          color: Colors.red,
         ),
       ),
     );
