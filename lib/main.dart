@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dicodinga/wisata_bdg_page.dart';
+import 'package:flutter_dicodinga/wisata_bdg_webpage.dart';
 
 void main() {
   runApp(const MyApp());
