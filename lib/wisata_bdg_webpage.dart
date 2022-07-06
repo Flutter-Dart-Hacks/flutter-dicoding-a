@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dicodinga/models/touris_item.dart';
-import 'package:flutter_dicodinga/wisata_bdg_detail_page.dart';
+import 'package:flutter_dicodinga/wisata_bdg_detail_webpage.dart';
 
 class WisataBandungPage extends StatefulWidget {
   const WisataBandungPage({Key? key}) : super(key: key);
