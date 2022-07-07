@@ -20,3 +20,21 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Contoh Membuat Signing Key
+
+Pembuatan signing key dengan Java Keytool
+
+```sh
+keytool -genkey -v -keystore ~/uploadtest-dicoding-keystore.jks -keyalg RSA -keysize 2048 -validity 70000 -alias dico_upload_testing
+```
+
+Referensi dari Stackoverflow
+
+[https://stackoverflow.com/questions/14272794/how-to-create-an-android-keystore-rsa-key-with-infinite-validity](https://stackoverflow.com/questions/14272794/how-to-create-an-android-keystore-rsa-key-with-infinite-validity)
+
+Untuk pengecekan validitas keystore jks
+
+```sh
+keytool -list -v -keystore upload-dicoding-keystore.jks
+```
