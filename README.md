@@ -48,3 +48,11 @@ Mengganti fungsi min sdk version dan target sdk version
 Menyetel build release dengan keystore
 
 [https://docs.flutter.dev/deployment/android#signing-the-app](https://docs.flutter.dev/deployment/android#signing-the-app)
+
+## Build AAB dan APK
+
+Perintah untuk menjalankan APK dan AAB
+
+```sh
+flutter build web && flutter build appbundle && flutter build apk
+```
