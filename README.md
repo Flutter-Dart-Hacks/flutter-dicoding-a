@@ -38,3 +38,13 @@ Untuk pengecekan validitas keystore jks
 ```sh
 keytool -list -v -keystore upload-dicoding-keystore.jks
 ```
+
+## Min SDK Version dan Target SDK Version
+
+Mengganti fungsi min sdk version dan target sdk version
+
+[https://stackoverflow.com/questions/52060516/how-to-change-android-minsdkversion-in-flutter-project](https://stackoverflow.com/questions/52060516/how-to-change-android-minsdkversion-in-flutter-project)
+
+Menyetel build release dengan keystore
+
+[https://docs.flutter.dev/deployment/android#signing-the-app](https://docs.flutter.dev/deployment/android#signing-the-app)
