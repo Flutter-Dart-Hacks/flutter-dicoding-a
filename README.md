@@ -56,3 +56,11 @@ Perintah untuk menjalankan APK dan AAB
 ```sh
 flutter build web && flutter build appbundle && flutter build apk
 ```
+
+## Demo Hasil Latihan
+
+Aplikasi Wisata Bandung yang dapat diakses di halaman ini.
+
+[https://github.com/GulajavaMinistudio/dico-wisata-flutter](https://github.com/GulajavaMinistudio/dico-wisata-flutter)
+
+[https://gulajavaministudio.github.io/dico-wisata-flutter/](https://gulajavaministudio.github.io/dico-wisata-flutter/)
