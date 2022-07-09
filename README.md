@@ -39,7 +39,7 @@ Untuk pengecekan validitas keystore jks
 keytool -list -v -keystore upload-dicoding-keystore.jks
 ```
 
-## Min SDK Version dan Target SDK Version
+## Konfigurasi Min SDK Version dan Target SDK Version
 
 Mengganti fungsi min sdk version dan target sdk version
 
