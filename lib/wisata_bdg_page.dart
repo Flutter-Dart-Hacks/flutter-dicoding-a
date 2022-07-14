@@ -39,6 +39,12 @@ class _WisataBandungPageState extends State<WisataBandungPage> {
 class ListWisata extends StatelessWidget {
   const ListWisata({Key? key}) : super(key: key);
 
+  createClearHistoryRoute(BuildContext context, TourismPlace tourismPlace) {
+    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) {
+      return DetailWisataBandung(tourismPlace: tourismPlace);
+    }), (route) => false);
+  }
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -46,11 +52,12 @@ class ListWisata extends StatelessWidget {
         TourismPlace tourismPlace = tourismPlaceList[index];
         return InkWell(
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return DetailWisataBandung(
-                tourismPlace: tourismPlace,
-              );
-            }));
+            // Navigator.push(context, MaterialPageRoute(builder: (context) {
+            //   return DetailWisataBandung(
+            //     tourismPlace: tourismPlace,
+            //   );
+            // }));
+            createClearHistoryRoute(context, tourismPlace);
           },
           child: Card(
             child: Row(
